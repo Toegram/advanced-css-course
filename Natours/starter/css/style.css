@@ -27,6 +27,7 @@ body {
   background-image:
    linear-gradient(to right bottom,
     rgba(126, 213, 111, 0.8),
+    /* to use opacity color must be in RGBA format. A is opacity */
     rgba(40, 180, 133, 0.8)),
    url(../img/hero.jpg);
   background-size: cover;
@@ -34,6 +35,7 @@ body {
   position: relative;
   clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
   /* clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%); */
+  /* http://bennettfeely.com/clippy/ for pre set polygons*/
 }
 
 .logo-box {
@@ -56,6 +58,7 @@ body {
 
   /* determines if backface of element is hidden or visible. fixes some shaky-ness in animations */
   backface-visibility: hidden;
+  margin-bottom: 60px;
 }
 
 .heading-primary-main{
@@ -88,6 +91,7 @@ body {
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
+  text-align: center;
 }
 
 /* @keyframes moveInLeft{ === function moveInLeft(){ */
@@ -119,4 +123,76 @@ body {
     opacity: 1;
     transform: tranlslateX(0);
   }
+}
+
+@keyframes moveInBottom{
+  0%{
+    opacity: 0;
+    transform: translateY(200px) rotate(0deg);
+  }
+  80%{
+    opacity: .8;
+    transform: translate(-3px);
+  }
+  100%{
+    opacity: 1;
+    transform: tranlslateX(0);
+  }
+}
+
+/* we always want the button to look the same (i.e. not change from blue to purple, so we put the psuedo classes together like so:) */
+.btn:link,
+.btn:visited {
+  display: inline-block;
+  text-transform: uppercase;
+  text-decoration: none;
+  /* if you declare only two values in padding, the first is top/bottom the second is left/right */
+  padding: 15px 40px;
+  border-radius: 100px;
+  transition: all .2s;
+  position: relative;
+}
+
+.btn:hover{
+  transform: translateY(-3px);
+  /* x, y, blur, color */
+  box-shadow: -3px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+  transform: translateY(-1px);
+}
+
+.btn-white {
+  background-color: #fff;
+  color: #777;
+}
+
+.btn::after{
+  /* content and display MUST be set, even if set to "" */
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all .5s;
+}
+
+.btn-white::after {
+  background-color: #fff;
+}
+
+.btn:hover::after{
+  transform: scaleX(1.07) scaleY(1.06);
+  opacity: 0;
+}
+
+.btn-animated {
+  animation: moveInBottom 2.6s ease-out;
+  animation-fill-mode: backwards;
+  /* automatically applies the 0% values of the animation before the animation starts */
 }
