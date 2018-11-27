@@ -46,6 +46,10 @@ body {
   height: 35px;
 }
 
+/* .logo:hover{
+  animation: moveInRight 2s ease-out;
+} */
+
 .heading-primary {
   color: #fff;
   text-transform: uppercase;
@@ -71,7 +75,8 @@ body {
   display: block;
   font-size: 20px;
   font-weight: 700;
-  letter-spacing: 17.5px;
+  letter-spacing: 18px;
+  /* transform: rotate(180deg); */
 
   animation: moveInRight 3s ease-out;
   /* animation will figure out name, duration, timing-function on its own */
@@ -104,7 +109,7 @@ body {
 @keyframes moveInRight{
   0%{
     opacity: 0;
-    transform: translateX(100px);
+    transform: translateX(100px) rotate(0deg);
   }
   80%{
     opacity: .8;
