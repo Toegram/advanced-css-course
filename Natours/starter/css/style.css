@@ -49,6 +49,9 @@ body {
 .heading-primary {
   color: #fff;
   text-transform: uppercase;
+
+  /* determines if backface of element is hidden or visible. fixes some shaky-ness in animations */
+  backface-visibility: hidden;
 }
 
 .heading-primary-main{
@@ -56,6 +59,12 @@ body {
   font-size: 60px;
   font-weight: 400;
   letter-spacing: 35px;
+
+  animation-name: moveInLeft;
+  animation-duration: 3s;
+  animation-timing-function: ease-out;
+  /* animation-delay: 3s; */
+  /* animation-iteration-count: 3; */
 }
 
 .heading-primary-sub{
@@ -63,6 +72,10 @@ body {
   font-size: 20px;
   font-weight: 700;
   letter-spacing: 17.5px;
+
+  animation: moveInRight 3s ease-out;
+  /* animation will figure out name, duration, timing-function on its own */
+
 }
 
 .text-box{
@@ -70,4 +83,35 @@ body {
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+/* @keyframes moveInLeft{ === function moveInLeft(){ */
+@keyframes moveInLeft{
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  80%{
+    opacity: .8;
+    transform: translateX(3px)
+  }
+  100%{
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes moveInRight{
+  0%{
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  80%{
+    opacity: .8;
+    transform: translateX(-3px);
+  }
+  100%{
+    opacity: 1;
+    transform: tranlslateX(0);
+  }
 }
