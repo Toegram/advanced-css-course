@@ -121,7 +121,7 @@ body {
   }
   100%{
     opacity: 1;
-    transform: tranlslateX(0);
+    transform: translateX(0);
   }
 }
 
@@ -132,11 +132,11 @@ body {
   }
   80%{
     opacity: .8;
-    transform: translate(-3px);
+    transform: translateY(-3px);
   }
   100%{
-    opacity: 1;
-    transform: tranlslateX(0);
+    /* opacity: 1; */
+    transform: translateY(0);
   }
 }
 
