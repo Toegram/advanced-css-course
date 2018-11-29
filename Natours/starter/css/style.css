@@ -13,13 +13,19 @@ Dark green: #28b485
   box-sizing: border-box;
 }
 
+html {
+  font-size: 10px;
+  /* 1rem is 10px */
+}
+
 body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
-  font-size: 16px;
+  /* font-size: 16px; */
+  /* changed to REM which is based off of ROOT  */
   line-height: 1.7;
   color: #777;
-  padding: 20px;
+  padding: 2rem;
 }
 
 .header {
@@ -40,12 +46,12 @@ body {
 
 .logo-box {
   position: absolute;
-  top: 40px;
-  left: 40px;
+  top: 4rem;
+  left: 4rem;
 }
 
 .logo {
-  height: 35px;
+  height: 3.5rem;
 }
 
 /* .logo:hover{
@@ -58,14 +64,14 @@ body {
 
   /* determines if backface of element is hidden or visible. fixes some shaky-ness in animations */
   backface-visibility: hidden;
-  margin-bottom: 60px;
+  margin-bottom: 6rem;
 }
 
 .heading-primary-main{
   display: block;
-  font-size: 60px;
+  font-size: 6rem;
   font-weight: 400;
-  letter-spacing: 35px;
+  letter-spacing: 3.5rem;
 
   animation-name: moveInLeft;
   animation-duration: 3s;
@@ -76,9 +82,9 @@ body {
 
 .heading-primary-sub{
   display: block;
-  font-size: 20px;
+  font-size: 2rem;
   font-weight: 700;
-  letter-spacing: 18px;
+  letter-spacing: 1.8rem;
   /* transform: rotate(180deg); */
 
   animation: moveInRight 3s ease-out;
@@ -98,11 +104,11 @@ body {
 @keyframes moveInLeft{
   0% {
     opacity: 0;
-    transform: translateX(-100px);
+    transform: translateX(-10rem);
   }
   80%{
     opacity: .8;
-    transform: translateX(3px)
+    transform: translateX(.3rem)
   }
   100%{
     opacity: 1;
@@ -113,11 +119,11 @@ body {
 @keyframes moveInRight{
   0%{
     opacity: 0;
-    transform: translateX(100px) rotate(0deg);
+    transform: translateX(10rem) rotate(0deg);
   }
   80%{
     opacity: .8;
-    transform: translateX(-3px);
+    transform: translateX(-.3rem);
   }
   100%{
     opacity: 1;
@@ -128,11 +134,11 @@ body {
 @keyframes moveInBottom{
   0%{
     opacity: 0;
-    transform: translateY(200px) rotate(0deg);
+    transform: translateY(20rem) rotate(0deg);
   }
   80%{
     opacity: .8;
-    transform: translateY(-3px);
+    transform: translateY(-.3rem);
   }
   100%{
     /* opacity: 1; */
@@ -147,25 +153,27 @@ body {
   text-transform: uppercase;
   text-decoration: none;
   /* if you declare only two values in padding, the first is top/bottom the second is left/right */
-  padding: 15px 40px;
-  border-radius: 100px;
+  padding: 1.5rem 4rem;
+  border-radius: 10rem;
   transition: all .2s;
   position: relative;
+  font-size: 1.6rem;
+  font-weight: 700;
 }
 
 .btn:hover{
-  transform: translateY(-3px);
+  transform: translateY(-.3rem);
   /* x, y, blur, color */
-  box-shadow: -3px 5px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: .3rem .5rem 1rem rgba(0, 0, 0, 0.2);
 }
 
 .btn:active {
-  transform: translateY(-1px);
+  transform: translateY(.1rem);
 }
 
 .btn-white {
   background-color: #fff;
-  color: #777;
+  color: rgb(116, 116, 116);
 }
 
 .btn::after{
