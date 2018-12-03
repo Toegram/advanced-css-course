@@ -1,0 +1,217 @@
+/*
+COLORS:
+
+Light green: #7ed56f
+Medium green: #55c57a
+Dark green: #28b485
+
+*/
+
+$color-primary: #55c57a;
+$color-primary-light: #7ed56f;
+$color-primary-dark: #28b485;
+$color-grey-dark: #777;
+$color-white: #fff;
+
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  /* 1rem is 10px */
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  /* font-size: 16px; */
+  /* changed to REM which is based off of ROOT  */
+  line-height: 1.7;
+  color: #777;
+  padding: 2rem;
+  box-sizing: border-box;
+
+}
+
+.header {
+  height: 95vh;
+  background-image:
+   linear-gradient(to right bottom,
+    rgba($color-primary-light, 0.8),
+    /* to use opacity color must be in RGBA format. A is opacity */
+    rgba($color-primary-dark, 0.8)),
+   url(../img/hero.jpg);
+  background-size: cover;
+  background-position: top;
+  position: relative;
+  clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+  /* clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%); */
+  /* http://bennettfeely.com/clippy/ for pre set polygons*/
+}
+
+.header__logo-box {
+  position: absolute;
+  top: 4rem;
+  left: 4rem;
+}
+
+.header__logo {
+  height: 3.5rem;
+}
+
+/* .logo:hover{
+  animation: moveInRight 2s ease-out;
+} */
+
+.heading-primary {
+  color: $color-white;
+  text-transform: uppercase;
+
+  /* determines if backface of element is hidden or visible. fixes some shaky-ness in animations */
+  backface-visibility: hidden;
+  margin-bottom: 6rem;
+}
+
+.heading-primary--main{
+  display: block;
+  font-size: 6rem;
+  font-weight: 400;
+  letter-spacing: 3.5rem;
+
+  animation-name: moveInLeft;
+  animation-duration: 3s;
+  animation-timing-function: ease-out;
+  /* animation-delay: 3s; */
+  /* animation-iteration-count: 3; */
+}
+
+.heading-primary--sub{
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1.8rem;
+  /* transform: rotate(180deg); */
+
+  animation: moveInRight 3s ease-out;
+  /* animation will figure out name, duration, timing-function on its own */
+
+}
+
+.header__text-box{
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+/* @keyframes moveInLeft{ === function moveInLeft(){ */
+@keyframes moveInLeft{
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+  80%{
+    opacity: .8;
+    transform: translateX(.3rem)
+  }
+  100%{
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes moveInRight{
+  0%{
+    opacity: 0;
+    transform: translateX(10rem) rotate(0deg);
+  }
+  80%{
+    opacity: .8;
+    transform: translateX(-.3rem);
+  }
+  100%{
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes moveInBottom{
+  0%{
+    opacity: 0;
+    transform: translateY(20rem) rotate(0deg);
+  }
+  80%{
+    opacity: .8;
+    transform: translateY(-.3rem);
+  }
+  100%{
+    /* opacity: 1; */
+    transform: translateY(0);
+  }
+}
+
+/* we always want the button to look the same (i.e. not change from blue to purple, so we put the psuedo classes together like so:) */
+.btn:link,
+.btn:visited {
+  display: inline-block;
+  text-transform: uppercase;
+  text-decoration: none;
+  /* if you declare only two values in padding, the first is top/bottom the second is left/right */
+  padding: 1.5rem 4rem;
+  border-radius: 10rem;
+  transition: all .2s;
+  position: relative;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.btn:hover{
+  transform: translateY(-.3rem);
+  /* x, y, blur, color */
+  box-shadow: .3rem .5rem 1rem rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+  transform: translateY(.1rem);
+}
+
+.btn--white {
+  background-color: $color-white;
+  color: $color-grey-dark;
+}
+
+.btn::after{
+  /* content and display MUST be set, even if set to "" */
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all .5s;
+}
+
+.btn-white::after {
+  background-color: $%$color-white;
+}
+
+.btn:hover::after{
+  transform: scaleX(1.07) scaleY(1.06);
+  opacity: 0;
+}
+
+.btn--animated {
+  animation: moveInBottom 2.6s ease-out;
+  animation-fill-mode: backwards;
+  /* automatically applies the 0% values of the animation before the animation starts */
+}
