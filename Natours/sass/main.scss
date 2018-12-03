@@ -1,17 +1,10 @@
-/*
-COLORS:
-
-Light green: #7ed56f
-Medium green: #55c57a
-Dark green: #28b485
-
-*/
-
-$color-primary: #55c57a;
-$color-primary-light: #7ed56f;
-$color-primary-dark: #28b485;
+//VARIABLES
+$color-primary: #55c57a; //GREEN
+$color-primary-light: #7ed56f; //LIGHT GREEN
+$color-primary-dark: #28b485; //DARK GREEN
 $color-grey-dark: #777;
 $color-white: #fff;
+$color-black:
 
 
 *,
@@ -53,21 +46,25 @@ body {
   clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
   /* clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%); */
   /* http://bennettfeely.com/clippy/ for pre set polygons*/
-}
 
-.header__logo-box {
-  position: absolute;
-  top: 4rem;
-  left: 4rem;
-}
+  &__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem;
+  }
 
-.header__logo {
-  height: 3.5rem;
-}
+  &__logo {
+    height: 3.5rem;
+  }
 
-/* .logo:hover{
-  animation: moveInRight 2s ease-out;
-} */
+  &__text-box{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+}
 
 .heading-primary {
   color: $color-white;
@@ -76,40 +73,34 @@ body {
   /* determines if backface of element is hidden or visible. fixes some shaky-ness in animations */
   backface-visibility: hidden;
   margin-bottom: 6rem;
+
+  &--main{
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 3.5rem;
+
+    animation-name: moveInLeft;
+    animation-duration: 3s;
+    animation-timing-function: ease-out;
+    /* animation-delay: 3s; */
+    /* animation-iteration-count: 3; */
+  }
+
+  &--sub{
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.8rem;
+    /* transform: rotate(180deg); */
+
+    animation: moveInRight 3s ease-out;
+    /* animation will figure out name, duration, timing-function on its own */
+
+  }
 }
 
-.heading-primary--main{
-  display: block;
-  font-size: 6rem;
-  font-weight: 400;
-  letter-spacing: 3.5rem;
 
-  animation-name: moveInLeft;
-  animation-duration: 3s;
-  animation-timing-function: ease-out;
-  /* animation-delay: 3s; */
-  /* animation-iteration-count: 3; */
-}
-
-.heading-primary--sub{
-  display: block;
-  font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: 1.8rem;
-  /* transform: rotate(180deg); */
-
-  animation: moveInRight 3s ease-out;
-  /* animation will figure out name, duration, timing-function on its own */
-
-}
-
-.header__text-box{
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
 
 /* @keyframes moveInLeft{ === function moveInLeft(){ */
 @keyframes moveInLeft{
@@ -157,61 +148,63 @@ body {
   }
 }
 
-/* we always want the button to look the same (i.e. not change from blue to purple, so we put the psuedo classes together like so:) */
-.btn:link,
-.btn:visited {
-  display: inline-block;
-  text-transform: uppercase;
-  text-decoration: none;
-  /* if you declare only two values in padding, the first is top/bottom the second is left/right */
-  padding: 1.5rem 4rem;
-  border-radius: 10rem;
-  transition: all .2s;
-  position: relative;
-  font-size: 1.6rem;
-  font-weight: 700;
-}
+&{
+  &:link,
+  &:visited {
+    display: inline-block;
+    text-transform: uppercase;
+    text-decoration: none;
+    /* if you declare only two values in padding, the first is top/bottom the second is left/right */
+    padding: 1.5rem 4rem;
+    border-radius: 10rem;
+    transition: all .2s;
+    position: relative;
+    font-size: 1.6rem;
+    font-weight: 700;
+  }
 
-.btn:hover{
-  transform: translateY(-.3rem);
-  /* x, y, blur, color */
-  box-shadow: .3rem .5rem 1rem rgba(0, 0, 0, 0.2);
-}
+  &:hover{
+    transform: translateY(-.3rem);
+    /* x, y, blur, color */
+    box-shadow: .3rem .5rem 1rem rgba(0, 0, 0, 0.2);
 
-.btn:active {
-  transform: translateY(.1rem);
-}
+    &::after{
+      transform: scaleX(1.07) scaleY(1.06);
+      opacity: 0;
+    }
+  }
 
-.btn--white {
-  background-color: $color-white;
-  color: $color-grey-dark;
-}
+  &:active {
+    transform: translateY(.1rem);
+  }
 
-.btn::after{
-  /* content and display MUST be set, even if set to "" */
-  content: "";
-  display: inline-block;
-  height: 100%;
-  width: 100%;
-  border-radius: 100px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  transition: all .5s;
-}
+  &--white {
+    background-color: $color-white;
+    color: $color-grey-dark;
 
-.btn-white::after {
-  background-color: $%$color-white;
-}
+    &::after {
+      background-color: $%$color-white;
+    }
 
-.btn:hover::after{
-  transform: scaleX(1.07) scaleY(1.06);
-  opacity: 0;
-}
+  }
 
-.btn--animated {
-  animation: moveInBottom 2.6s ease-out;
-  animation-fill-mode: backwards;
-  /* automatically applies the 0% values of the animation before the animation starts */
+  &::after{
+    /* content and display MUST be set, even if set to "" */
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .5s;
+  }
+
+  &--animated {
+    animation: moveInBottom 2.6s ease-out;
+    animation-fill-mode: backwards;
+    /* automatically applies the 0% values of the animation before the animation starts */
+  }
 }
