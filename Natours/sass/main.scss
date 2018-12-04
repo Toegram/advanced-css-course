@@ -1,11 +1,10 @@
+@import "./base/_base.scss"
 
 $color-primary: #55c57a; //GREEN
 $color-primary-light: #7ed56f; //LIGHT GREEN
 $color-primary-dark: #28b485; //DARK GREEN
 $color-grey-dark: #777;
 $color-white: #fff;
-$color-black:
-
 
 *,
 *::after,
@@ -26,7 +25,7 @@ body {
   /* font-size: 16px; */
   /* changed to REM which is based off of ROOT  */
   line-height: 1.7;
-  color: #777;
+  color: $color-grey-dark;
   padding: 2rem;
   box-sizing: border-box;
 
@@ -148,7 +147,7 @@ body {
   }
 }
 
-&{
+ .btn{
   &:link,
   &:visited {
     display: inline-block;
@@ -183,7 +182,7 @@ body {
     color: $color-grey-dark;
 
     &::after {
-      background-color: $%$color-white;
+      background-color: $color-white;
     }
 
   }
