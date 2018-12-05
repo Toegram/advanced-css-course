@@ -1,0 +1,61 @@
+
+ .btn{
+  &:link,
+  &:visited {
+    display: inline-block;
+    text-transform: uppercase;
+    text-decoration: none;
+    /* if you declare only two values in padding, the first is top/bottom the second is left/right */
+    padding: 1.5rem 4rem;
+    border-radius: 10rem;
+    transition: all .2s;
+    position: relative;
+    font-size: 1.6rem;
+    font-weight: 700;
+  }
+
+  &:hover{
+    transform: translateY(-.3rem);
+    /* x, y, blur, color */
+    box-shadow: .3rem .5rem 1rem rgba(0, 0, 0, 0.2);
+
+    &::after{
+      transform: scaleX(1.07) scaleY(1.06);
+      opacity: 0;
+    }
+  }
+
+  &:active {
+    transform: translateY(.1rem);
+  }
+
+  &--white {
+    background-color: $color-white;
+    color: $color-grey-dark;
+
+    &::after {
+      background-color: $color-white;
+    }
+
+  }
+
+  &::after{
+    /* content and display MUST be set, even if set to "" */
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .5s;
+  }
+
+  &--animated {
+    animation: moveInBottom 2.6s ease-out;
+    animation-fill-mode: backwards;
+    /* automatically applies the 0% values of the animation before the animation starts */
+  }
+}
