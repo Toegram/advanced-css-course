@@ -10,7 +10,7 @@
     border-radius: 10rem;
     transition: all .2s;
     position: relative;
-    font-size: 1.6rem;
+    font-size: $default-font-size;
     font-weight: 700;
   }
 
@@ -57,5 +57,31 @@
     animation: moveInBottom 2.6s ease-out;
     animation-fill-mode: backwards;
     /* automatically applies the 0% values of the animation before the animation starts */
+  }
+}
+
+.btn-text{
+  &:link,
+  &:visited {
+    font-size: $default-font-size;
+    color: $color-primary;
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-bottom: 1px solid $color-primary;
+    padding: 3px;
+  }
+
+  &:hover{
+    background-image: linear-gradient(to right, $color-primary-light, $color-primary);
+    color: $color-white;
+    box-shadow: -1rem 1.5rem 2rem rgba(0, 0, 0, .3); //x, y, blur, color
+    transform: translateY(-.2rem) translateX(.1rem);
+    font-weight: 700;
+  }
+
+  &:active{
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .3); //x, y, blur, color
+    transform: translateY(-.1rem)
   }
 }
