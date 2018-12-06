@@ -2,4 +2,17 @@
   background-color: $color-grey-light;
   padding: 25rem 0;
   margin-top: -20vh;
+  margin-bottom: -20vh;
+}
+
+.section-features {
+  padding: 20rem 0;
+  background-image:
+   linear-gradient(to right bottom,
+    rgba($color-primary-light, 0.8),
+    /* to use opacity color must be in RGBA format. A is opacity */
+    rgba($color-primary-dark, 0.8)),
+   url(../../starter/img/nat-4.jpg);
+   background-size: cover;
+   // clip-path: polygon(0 15vh, 100% 0, 100% 85vh, 0 100%);
 }
