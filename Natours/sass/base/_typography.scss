@@ -52,8 +52,9 @@ body {
   transition: all .2s;
 
   &:hover {
-    transform: skewY(-2deg) skewX(15deg);
-    text-shadow: .5rem 1rem 2rem rgba(121, 121, 121, 0.3); // x y blur color/opacity
+    // transform: skewY(-2deg) skewX(15deg);
+    transform: scale(1.03) translateY(.2rem) translateX(.2rem);
+    text-shadow: .5rem 1rem 2rem rgba(121, 121, 121, 0.3); // x y blur color/opacity  
   }
 }
 
