@@ -129,8 +129,9 @@ body {
     width: 100%;
     backface-visibility: hidden;
     border-radius: 3rem;
+    overflow: hidden;
     box-shadow: 1rem 1.5rem 4rem rgba(15, 15, 15, 0.35) .card__side --front;
-      box-shadow-background-color: darkblue; }
+      box-shadow-background-color: white; }
     .card__side--back {
       transform: rotateY(180deg); }
       .card__side--back-1 {
@@ -143,6 +144,28 @@ body {
     transform: rotateY(-180deg); }
   .card:hover .card__side--back {
     transform: rotateY(0deg); }
+  .card__picture {
+    background-size: cover;
+    height: 20rem;
+    background-blend-mode: hue;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%); }
+    .card__picture--1 {
+      background-image: linear-gradient(to right bottom, #7ed56f, #28b485), url(../../starter/img/nat-5.jpg); }
+    .card__picture--2 {
+      background-image: url(../../starter/img/nat-5.jpg); }
+    .card__picture--3 {
+      background-image: url(../../starter/img/nat-5.jpg); }
+  .card__heading {
+    font-size: 3rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #fff;
+    position: relative;
+    top: -2.5rem;
+    text-align: center;
+    transform: skewY(-8.41deg);
+    background-color: rgba(15, 15, 15, 0.4); }
 
 .btn:link, .btn:visited {
   display: inline-block;
@@ -307,6 +330,7 @@ body {
   background-size: cover;
   background-position: top;
   position: relative;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   /* clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%); */
   /* http://bennettfeely.com/clippy/ for pre set polygons*/ }

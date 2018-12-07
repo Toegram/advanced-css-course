@@ -1,3 +1,5 @@
+
+//FUNCTIONALITY
 .card {
   perspective: 150rem;
   -moz-perspective: 150rem;
@@ -18,10 +20,11 @@
     width: 100%;
     backface-visibility: hidden;
     border-radius: 3rem;
+    overflow: hidden;
     box-shadow: 1rem 1.5rem 4rem rgba(15, 15, 15, .35)
 
     &--front{
-      background-color: darkblue;
+      background-color: white;
     }
 
     &--back {
@@ -48,5 +51,38 @@
 
   &:hover &__side--back {
     transform: rotateY(0deg);
+  }
+
+  &__picture {
+    background-size: cover;
+    height: 20rem;
+    background-blend-mode: hue;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+
+    &--1 {
+      background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark), url(../../starter/img/nat-5.jpg);
+    }
+
+    &--2 {
+      background-image: url(../../starter/img/nat-5.jpg);
+    }
+
+    &--3 {
+      background-image: url(../../starter/img/nat-5.jpg);
+    }
+  }
+
+  &__heading {
+    font-size: 3rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $color-white;
+    position: relative;
+    //absolute positioning breaks my text align ? ? ?
+    top: -2.5rem;
+    text-align: center;
+    transform: skewY(-8.41deg);
+    background-color: rgba(15, 15, 15, .4);
   }
 }
