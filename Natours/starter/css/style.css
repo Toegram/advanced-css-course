@@ -214,9 +214,15 @@ body {
   border-radius: 3px;
   box-shadow: 0 1.5rem 4rem rgba(15, 15, 15, 0.15);
   transition: all .3s ease-out; }
-  .feature-box:hover {
+  .feature-box--left:hover {
     transform: translateX(0.4rem) translateY(-0.4rem) scale(1.01);
     box-shadow: -1rem 1.5rem 4rem rgba(15, 15, 15, 0.4); }
+  .feature-box--right:hover {
+    transform: translateX(-0.4rem) translateY(-0.4rem) scale(1.01);
+    box-shadow: 1rem 1.5rem 4rem rgba(15, 15, 15, 0.4); }
+  .feature-box--middle:hover {
+    transform: translateY(-0.4rem) scale(1.01);
+    box-shadow: 0 1.5rem 4rem rgba(15, 15, 15, 0.4); }
 
 .feature-box__icon {
   font-size: 6rem;

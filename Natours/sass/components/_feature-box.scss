@@ -8,11 +8,23 @@
   box-shadow: 0 1.5rem 4rem rgba(15, 15, 15, .15);
   transition: all .3s ease-out;
 
-  &:hover{
+  &--left:hover{
     transform: translateX(.4rem) translateY(-.4rem) scale(1.01);
     box-shadow: -1rem 1.5rem 4rem rgba(15, 15, 15, .4);
   }
+  &--right:hover{
+    transform: translateX(-.4rem) translateY(-.4rem) scale(1.01);
+    box-shadow: 1rem 1.5rem 4rem rgba(15, 15, 15, .4);
+  }
+
+  &--middle:hover{
+    transform: translateY(-.4rem) scale(1.01);
+    box-shadow: 0 1.5rem 4rem rgba(15, 15, 15, .4);
+  }
+
 }
+
+
 
 .feature-box__icon {
   font-size: 6rem;
