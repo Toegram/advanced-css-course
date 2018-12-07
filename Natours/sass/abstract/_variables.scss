@@ -1,16 +1,24 @@
+
 //Colors
 $color-primary: #55c57a; //GREEN
 $color-primary-light: #7ed56f; //LIGHT GREEN
 $color-primary-dark: #28b485; //DARK GREEN
+
+$color-secondary-light: #ffb900; //YELLOWISH
+$color-secondary-dark: #ff7730; //ORANGE
+
+$color-tertiary-light: #2998ff; //LIGHT BLUE
+$color-tertiary-dark: #5643fa; //BLUE-PURPLE
+
 $color-grey-dark: #777;
 $color-grey-light: #f7f7f7;
 $color-white: #fff;
 $color-black: #000;
 
+//Font
+$default-font-size: 1.6rem;
+
 //Grid
 $grid-width: 114rem;
 $gutter-vertical: 1rem;
 $gutter-horizontal: 6rem;
-
-//Font
-$default-font-size: 1.6rem;
