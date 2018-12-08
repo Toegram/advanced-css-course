@@ -4,15 +4,17 @@
   perspective: 150rem;
   -moz-perspective: 150rem;
   position: relative;
-  height: 50rem;
-
+  height: 52rem;
 
   &__side {
-    background-color: darkblue;
+    background-color: white;
     color: white;
     font-size: 6rem;
+    border-style: outset;
+    border-width: 1px;
+    border-color: rgba(15, 15, 15, .15);
 
-    height: 50rem;
+    height: 52rem;
     transition: all 1s ease;
     position: absolute;
     top: 0;
@@ -31,15 +33,15 @@
       transform: rotateY(180deg);
 
       &-1 {
-        background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark);
+        background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark, $color-secondary-light);
       }
 
       &-2 {
-        background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
+        background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark, $color-primary-light);
       }
 
       &-3 {
-        background-image: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark);
+        background-image: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark, $color-tertiary-light);
       }
 
     }
@@ -56,24 +58,25 @@
   &__picture {
     background-size: cover;
     height: 20rem;
-    background-blend-mode: hue;
+    background-blend-mode: soft-light;
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
     clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
 
     &--1 {
-      background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark), url(../../starter/img/nat-5.jpg);
+      background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark), url(../../starter/img/nat-5.jpg);
     }
 
     &--2 {
-      background-image: url(../../starter/img/nat-5.jpg);
+      background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark), url(../../starter/img/nat-6.jpg);
     }
 
     &--3 {
-      background-image: url(../../starter/img/nat-5.jpg);
+      background-image: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark), url(../../starter/img/nat-7.jpg);
     }
   }
 
   &__heading {
+    text-decoration: none;
     font-size: 3rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -82,7 +85,78 @@
     //absolute positioning breaks my text align ? ? ?
     top: -2.5rem;
     text-align: center;
-    transform: skewY(-8.41deg);
-    background-color: rgba(15, 15, 15, .4);
+    transform: skewY(-8.45deg);
+    // background-color: rgba(15, 15, 15, .4);
+  }
+
+  &__heading-span {
+    &--1{
+      background-image: linear-gradient(to right bottom, rgba($color-secondary-light, .5), rgba($color-secondary-dark, .95));
+      padding-left: 3.3rem;
+      padding-right: 3.3rem;
+    }
+    &--2{
+      background-image: linear-gradient(to right bottom, rgba($color-primary-light, .5), rgba($color-primary-dark, .95));
+      padding-left: 3.3rem;
+      padding-right: 3.3rem;
+    }
+    &--3{
+      background-image: linear-gradient(to right bottom, rgba($color-tertiary-light, .5), rgba($color-tertiary-dark, .95));
+      padding-left: 3.3rem;
+      padding-right: 3.3rem;
+    }
+  }
+
+
+  &__details {
+
+    ul{
+      list-style: none;
+      width: 80%;
+      margin: 0 auto;
+
+      li{
+        color: black;
+        text-align: center;
+        font-size: 1.5rem;
+        padding: 1rem;
+
+        &:not(:last-child) {
+          border-bottom: 1px solid rgba(15,15,15,.1);
+        }
+      }
+    }
+  }
+
+  &__cta {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+  }
+
+  &__price-box {
+    text-align: center;
+    margin-bottom: 8rem;
+  }
+
+  &__price-only {
+    transform: translateY(4rem);
+    font-size: 3rem;
+    font-weight: 100;
+    text-transform: uppercase;
+  }
+
+  &__price-value {
+    font-size: 9rem;
+    font-weight: 200;
+  }
+
+  &__price-person{
+    transform: translateY(-3rem);
+    font-size: 3rem;
+    font-weight: 100;
+    text-transform: uppercase;
   }
 }

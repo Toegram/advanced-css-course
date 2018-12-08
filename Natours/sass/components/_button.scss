@@ -39,6 +39,16 @@
 
   }
 
+  &--green {
+    background-color: $color-primary;
+    color: $color-white;
+
+    &::after {
+      background-color: $color-primary;
+    }
+
+  }
+
   &::after{
     /* content and display MUST be set, even if set to "" */
     content: "";
